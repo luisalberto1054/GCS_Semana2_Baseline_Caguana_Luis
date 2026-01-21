@@ -1,0 +1,154 @@
+# CASOS DE PRUEBA
+## Aplicación de Turnos Básica – MVC con API REST (.NET)
+
+---
+
+## 1. Introducción
+
+El presente documento describe los casos de prueba definidos para validar el correcto funcionamiento de la Aplicación de Turnos Básica. Los casos de prueba se elaboran con base en los requerimientos funcionales y no funcionales establecidos en el SRS.
+
+---
+
+## 2. Alcance de las Pruebas
+
+Las pruebas cubren:
+- Registro de turnos
+- Consulta de turnos
+- Actualización del estado de turnos
+- Validación de reglas básicas del sistema
+- Verificación de rendimiento y persistencia de datos
+
+---
+
+## 3. Casos de Prueba Funcionales
+
+### Caso de Prueba CP-01  
+**Nombre:** Registro de nuevo turno  
+**Requerimiento asociado:** REQ-1  
+
+**Precondición:**  
+- El sistema se encuentra operativo.
+- El usuario accede a la vista Index.
+
+**Datos de entrada:**  
+- NumeroTurno: T-001  
+- TipoAtencion: Atención General  
+
+**Procedimiento:**  
+1. Ingresar a la vista de gestión de turnos.  
+2. Completar el formulario de registro.  
+3. Presionar el botón “Registrar Turno”.
+
+**Resultado esperado:**  
+- El turno se registra correctamente.
+- El sistema asigna la fecha de registro y el estado “Pendiente”.
+- El turno se almacena en la base de datos.
+
+---
+
+### Caso de Prueba CP-02  
+**Nombre:** Consulta de listado de turnos  
+**Requerimiento asociado:** REQ-2  
+
+**Precondición:**  
+- Existen turnos registrados en el sistema.
+
+**Datos de entrada:**  
+- No aplica.
+
+**Procedimiento:**  
+1. Acceder a la vista Index.  
+2. Visualizar la tabla de turnos registrados.
+
+**Resultado esperado:**  
+- El sistema muestra el listado de turnos con número, fecha, tipo de atención y estado.
+
+---
+
+### Caso de Prueba CP-03  
+**Nombre:** Consulta de turno por identificador  
+**Requerimiento asociado:** REQ-4  
+
+**Precondición:**  
+- Existe un turno registrado con IdTurno válido.
+
+**Datos de entrada:**  
+- IdTurno = 1  
+
+**Procedimiento:**  
+1. Enviar solicitud GET al endpoint correspondiente.  
+2. Consultar la información del turno.
+
+**Resultado esperado:**  
+- El sistema devuelve la información del turno solicitado.
+- Los datos corresponden al turno registrado.
+
+---
+
+### Caso de Prueba CP-04  
+**Nombre:** Actualización del estado de turno  
+**Requerimiento asociado:** REQ-3  
+
+**Precondición:**  
+- Existe un turno con estado “Pendiente”.
+
+**Datos de entrada:**  
+- IdTurno = 1  
+- EstadoTurno = Atendido  
+
+**Procedimiento:**  
+1. Enviar solicitud PUT al endpoint de actualización.  
+2. Cambiar el estado del turno.
+
+**Resultado esperado:**  
+- El estado del turno se actualiza correctamente.
+- La modificación se guarda en la base de datos.
+
+---
+
+## 4. Casos de Prueba No Funcionales
+
+### Caso de Prueba CP-05  
+**Nombre:** Tiempo de respuesta de la API  
+**Requerimiento asociado:** REQ-5  
+
+**Precondición:**  
+- El servidor de la API está activo.
+
+**Datos de entrada:**  
+- Solicitud GET al endpoint de turnos.
+
+**Procedimiento:**  
+1. Enviar la solicitud a la API.  
+2. Medir el tiempo de respuesta.
+
+**Resultado esperado:**  
+- La API responde en un tiempo igual o menor a 3 segundos.
+
+---
+
+### Caso de Prueba CP-06  
+**Nombre:** Persistencia de datos  
+**Requerimiento asociado:** REQ-6  
+
+**Precondición:**  
+- Base de datos configurada y activa.
+
+**Datos de entrada:**  
+- Registro de un nuevo turno.
+
+**Procedimiento:**  
+1. Registrar un turno.  
+2. Reiniciar la aplicación.  
+3. Consultar el listado de turnos.
+
+**Resultado esperado:**  
+- El turno registrado permanece almacenado en la base de datos.
+
+---
+
+## 5. Resultado General Esperado
+
+La ejecución satisfactoria de los casos de prueba valida que la Aplicación de Turnos Básica cumple con los requerimientos definidos, asegurando un funcionamiento correcto, confiable y acorde a los lineamientos establecidos en el SRS y SDD.
+
+---
