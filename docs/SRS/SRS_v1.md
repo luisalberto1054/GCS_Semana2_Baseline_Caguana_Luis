@@ -84,3 +84,5 @@ El sistema debe garantizar la persistencia de la información utilizando una bas
 El presente documento es aprobado como base para el desarrollo de la Aplicación de Turnos Básica.
 
 ---
+**REQ-007**  
+El sistema debe permitir registrar en un log básico las operaciones realizadas sobre los turnos (creación y actualización de estado), con el fin de facilitar la trazabilidad y el control de cambios.
