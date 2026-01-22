@@ -1,10 +1,8 @@
-# GCS Semana 2 – Línea Base v1.0 (COAC Credi Ya)
+# GCS Semana 2 – Línea Base v1.0 TURNOS
 
 ## Objetivo
-Implementar un repositorio como depósito de elementos de configuración y establecer una línea base para el sistema de gestión de créditos de la COAC Credi Ya.
+Implementar un repositorio como turnos
 
 ## Descripción
-Sistema académico simplificado para la gestión básica de solicitudes de crédito.
+Sistema de turnos
 
-## Ejecución
-python src/main.py
